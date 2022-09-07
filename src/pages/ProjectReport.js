@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 
 import Chart from "../components/Chart";
 import { fetchUsers } from "../store/UserActions";
@@ -7,7 +7,7 @@ import { fetchUsers } from "../store/UserActions";
 const ProjectReport = ({ userData, fetchUsers }) => {
   useEffect(() => {
     fetchUsers();
-  }, []);
+  }, [fetchUsers]);
   return userData.loading ? (
     <h1>Loading</h1>
   ) : userData.error ? (
@@ -24,7 +24,7 @@ const ProjectReport = ({ userData, fetchUsers }) => {
 const mapStateToProps = (state) => {
   const projectId = [];
   const budget = [];
-  state.users.map((item) => {
+  state.users.forEach((item) => {
     projectId.push(item.projectID);
     budget.push(item.budget);
   });

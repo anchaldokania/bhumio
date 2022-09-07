@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { fetchUsers } from "../store/UserActions";
 import Sidebar from "../components/Sidebar";
 import Button from "@mui/material/Button";
-import { unstable_deprecatedPropType } from "@mui/utils";
 
 import Modal from "../components/Modal";
 import Card from "../components/Card";
