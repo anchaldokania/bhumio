@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { Provider } from "react-redux";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-function App() {
+import Home from "./pages/Home";
+import Project from "./pages/Project";
+import ProjectDetails from "./pages/ProjectDetails";
+import ProjectReport from "./pages/ProjectReport";
+import store from "./store/store";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Provider store={store}>
+        <Routes>
+          <Route path="/dashboard" element={<Home />} exact />
+          <Route path="/project/:id" element={<Project />} />
+          <Route path="/report/pdfreport" element={<ProjectDetails />} />
+          <Route
+            path="/report/allprojectbudgetplot"
+            element={<ProjectReport />}
+          />
+          <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        </Routes>
+      </Provider>
     </div>
   );
-}
+};
 
 export default App;

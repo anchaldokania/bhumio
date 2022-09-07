@@ -1,0 +1,42 @@
+.ModalDiv {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 5px;
+}
+
+.buttonDiv {
+  width: 90%;
+  padding: 10px;
+  align-items: center;
+  justify-items: right;
+}
+.submitButton {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 40%;
+}
+.submitButton:hover {
+  background-color: #203a2c;
+}
+
+.cancelButton {
+  background-color: #ff7859; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 40%;
+}
+.cancelButton:hover {
+  background-color: #853a27;
+}

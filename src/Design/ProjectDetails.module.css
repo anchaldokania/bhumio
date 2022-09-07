@@ -1,0 +1,22 @@
+.sideMainDiv {
+  background: white;
+  margin: 20px;
+  height: 100vh;
+  width: 100%;
+  left: 140px;
+  display: flex;
+  flex-direction: column;
+  padding: 25x;
+}
+
+.trDesign {
+  border-bottom: "5px solid blue";
+}
+.buttonEl {
+  border-color: #1f3e69;
+  color: black;
+  font-size: bold;
+  position: relative;
+  width: 250px;
+  align-self: flex-end;
+}
